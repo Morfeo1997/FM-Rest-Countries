@@ -1,0 +1,32 @@
+import { Moon } from 'lucide-react';
+
+
+const Header = ({isDark, setIsDark}) => {
+  
+
+  return (
+    <header className="bg-white dark:bg-gray-800 shadow-md px-6 py-4 transition-colors duration-300">
+      <div className="max-w-7xl mx-auto flex justify-between items-center">
+        {/* Left side - Title */}
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+            What in the world?
+          </h2>
+        </div>
+
+        {/* Right side - Dark mode toggle */}
+        <div 
+          className="flex items-center space-x-2 cursor-pointer hover:opacity-80 transition-opacity duration-200"
+          
+        >
+          <Moon onClick={() => setIsDark(!isDark)} className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+          <span className="text-gray-700 dark:text-gray-300 font-medium">
+            Dark Mode
+          </span>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+export default Header;
