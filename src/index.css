@@ -1,7 +1,8 @@
 @import "tailwindcss";
+
 @variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
-theme{
+@theme{
     --color-Blue-Elements: hsl(209, 23%, 22%);
     --color-Blue-Background: hsl(207, 26%, 17%);
     --color-Grey-Text: hsl(200, 15%, 8%);

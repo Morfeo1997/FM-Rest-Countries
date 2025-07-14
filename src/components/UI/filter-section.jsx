@@ -1,0 +1,94 @@
+import { useState } from 'react';
+import { Search, ChevronDown } from 'lucide-react';
+
+const SearchFilterBar = ({ onSearch, onFilterChange }) => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedRegion, setSelectedRegion] = useState('all');
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const regions = [
+    { value: 'all', label: 'Filter by Region' },
+    { value: 'Africa', label: 'Africa' },
+    { value: 'Americas', label: 'America' },
+    { value: 'Asia', label: 'Asia' },
+    { value: 'Europe', label: 'Europe' },
+    { value: 'Oceania', label: 'Oceania' }
+  ];
+
+  const handleSearchChange = (e) => {
+    const value = e.target.value;
+    setSearchTerm(value);
+    onSearch(value);
+  };
+
+  const handleRegionSelect = (region) => {
+    setSelectedRegion(region.value);
+    setIsDropdownOpen(false);
+    onFilterChange(region.value);
+  };
+
+  const selectedRegionLabel = regions.find(r => r.value === selectedRegion)?.label || 'Filter by Region';
+
+  return (
+    <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mt-4 px-4 md:px-8">
+      {/* Barra de busqueda */}
+      <div className="relative w-full md:w-96">
+        <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">
+          <Search size={20} />
+        </div>
+        <input
+          type="text"
+          placeholder="Search for a country..."
+          value={searchTerm}
+          onChange={handleSearchChange}
+          className="w-full pl-12 pr-4 py-4 bg-white dark:bg-Blue-Background text-Grey-Text dark:text-white rounded-lg shadow-md border-none outline-none placeholder-gray-400 dark:placeholder-gray-500 focus:ring-2 focus:ring-blue-500 transition-all duration-200"
+        />
+      </div>
+
+      {/* Filtro */}
+      <div className="relative">
+        <button
+          onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+          className="flex items-center cursor-pointer justify-between w-48 px-6 py-4 bg-white dark:bg-Blue-Background text-Grey-Text dark:text-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          <span className="text-sm font-medium">
+            {selectedRegionLabel}
+          </span>
+          <ChevronDown 
+            size={16} 
+            className={`transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`}
+          />
+        </button>
+
+        {/* Abrir Menu */}
+        {isDropdownOpen && (
+          <div className="absolute top-full left-0 w-48 mt-2 bg-white dark:bg-Blue-Background rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden z-10">
+            {regions.map((region) => (
+              <button
+                key={region.value}
+                onClick={() => handleRegionSelect(region)}
+                className={`w-full px-6 py-3 text-left text-sm hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-150 ${
+                  selectedRegion === region.value 
+                    ? 'bg-blue-50 cursor-pointer dark:bg-blue-900/20 text-blue-600 dark:text-blue-400' 
+                    : 'text-gray-900 cursor-pointer dark:text-white'
+                }`}
+              >
+                {region.label}
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* Cerrar opciones */}
+      {isDropdownOpen && (
+        <div 
+          className="fixed inset-0 z-5"
+          onClick={() => setIsDropdownOpen(false)}
+        />
+      )}
+    </div>
+  );
+};
+
+export default SearchFilterBar;

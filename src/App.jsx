@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Moon } from 'lucide-react';
+import FilterSection from './components/UI/filter-section.jsx'
 
 import Header from './components/UI/header.jsx'
 
@@ -15,9 +16,26 @@ function App() {
     }
   }, [isDark]);
 
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filterRegion, setFilterRegion] = useState('all');
+
+  const handleSearch = (term) => {
+    setSearchTerm(term);
+    console.log('Searching for:', term);
+  };
+
+  const handleFilterChange = (region) => {
+    setFilterRegion(region);
+    console.log('Filter by region:', region);
+  };
+
   return (
     <>
       <Header isDark={isDark} setIsDark={setIsDark} />
+      <FilterSection 
+          onSearch={handleSearch}
+          onFilterChange={handleFilterChange}
+      />
     </>
   )
 }
