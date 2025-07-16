@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Moon } from 'lucide-react';
 import FilterSection from './components/UI/filter-section.jsx'
-
+import MainContainer from './components/mainContainer.jsx'
 import Header from './components/UI/header.jsx'
+import Data from './data/data.json'
 
 
 function App() {
@@ -35,6 +36,10 @@ function App() {
       <FilterSection 
           onSearch={handleSearch}
           onFilterChange={handleFilterChange}
+      />
+      <MainContainer 
+        allCountries={Data}
+        
       />
     </>
   )
