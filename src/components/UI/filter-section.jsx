@@ -34,7 +34,7 @@ const SearchFilterBar = ({ onSearch, onFilterChange }) => {
       {/* Barra de busqueda */}
       <div className="relative rounded w-full md:w-96">
         <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-Grey-Background">
-          <Search size={20} />
+          <Search size={20} className='stroke-Grey-Input dark:stroke-white' />
         </div>
         <input
           type="text"
