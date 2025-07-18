@@ -67,7 +67,7 @@ const SearchFilterBar = ({ onSearch, onFilterChange }) => {
               <button
                 key={region.value}
                 onClick={() => handleRegionSelect(region)}
-                className={`w-full px-6 py-3 text-left text-sm hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-150 ${
+                className={`w-full px-6 py-3 text-left text-sm hover:bg-Grey-Background dark:hover:bg-Grey-Input transition-colors duration-150 ${
                   selectedRegion === region.value 
                     ? 'bg-blue-50 cursor-pointer dark:bg-blue-900/20 text-blue-600 dark:text-blue-400' 
                     : 'text-gray-900 cursor-pointer dark:text-white'
