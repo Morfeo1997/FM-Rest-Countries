@@ -3,8 +3,11 @@ import { useState, useEffect } from 'react';
 import { Moon } from 'lucide-react';
 import FilterSection from './components/UI/filter-section.jsx'
 import MainContainer from './components/mainContainer.jsx'
+import CountryDetail from './components/UI/countryDetail.jsx'
 import Header from './components/UI/header.jsx'
+import Footer from './components/UI/footer.jsx'
 import Data from './data/data.json'
+
 
 function App() {
   const [isDark, setIsDark] = useState(false);
@@ -14,6 +17,7 @@ function App() {
   const [filteredCountries, setFilteredCountries] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [filterRegion, setFilterRegion] = useState('all');
+  const [selectedCountry, setSelectedCountry] = useState(null);
 
   {/* Dark Theme */}
   useEffect(() => {
@@ -58,9 +62,26 @@ function App() {
 
   {/* Manejo de la navegacion (Todavia sin realizar) */}
   const handleCountryClick = (country) => {
+    setSelectedCountry(country);
     console.log('Country clicked:', country);
-    
   };
+
+  const handleBack = () => {
+    setSelectedCountry(null);
+  };
+
+    if (selectedCountry) {
+    return (
+      <>
+        <Header isDark={isDark} setIsDark={setIsDark} />
+        <CountryDetail 
+          country={selectedCountry}
+          onBack={handleBack}
+        />
+        <Footer />
+      </>
+    );
+  }
 
   return (
     <>
@@ -73,6 +94,7 @@ function App() {
         allCountries={filteredCountries} 
         onCountryClick={handleCountryClick}
       />
+      <Footer />
     </>
   )
 }
