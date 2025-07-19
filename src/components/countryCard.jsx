@@ -7,7 +7,7 @@ const CountryCard = ({ country, onClick }) => {
 
   return (
     <div 
-      className="bg-Grey-Background dark:bg-Blue-Elements rounded shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer overflow-hidden"
+      className="bg-Grey-Background dark:bg-Blue-Elements w-80 md:w-auto rounded shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer overflow-hidden"
       onClick={() => onClick && onClick(country)}
     >
       {/* Flag Image */}
@@ -22,13 +22,13 @@ const CountryCard = ({ country, onClick }) => {
       
       {/* Country Information */}
       <div className="p-6">
-        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
+        <h3 className="text-xl font-bold text-Grey-Text dark:text-white mb-4">
           {country.name}
         </h3>
         
         <div className="space-y-2">
           <div className="flex">
-            <span className="font-semibold text-gray-900 dark:text-white mr-2">
+            <span className="font-semibold text-Grey-Text dark:text-white mr-2">
               Population:
             </span>
             <span className="text-gray-600 dark:text-gray-300">
@@ -37,7 +37,7 @@ const CountryCard = ({ country, onClick }) => {
           </div>
           
           <div className="flex">
-            <span className="font-semibold text-gray-900 dark:text-white mr-2">
+            <span className="font-semibold text-Grey-Text dark:text-white mr-2">
               Region:
             </span>
             <span className="text-gray-600 dark:text-gray-300">
@@ -46,7 +46,7 @@ const CountryCard = ({ country, onClick }) => {
           </div>
           
           <div className="flex">
-            <span className="font-semibold text-gray-900 dark:text-white mr-2">
+            <span className="font-semibold text-Grey-Text dark:text-white mr-2">
               Capital:
             </span>
             <span className="text-gray-600 dark:text-gray-300">

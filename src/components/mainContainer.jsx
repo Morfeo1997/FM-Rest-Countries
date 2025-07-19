@@ -23,7 +23,7 @@ const MainContainer = ({ allCountries = [], onCountryClick }) => {
     <div className="w-full min-h-screen bg-Grey-Background dark:bg-Blue-Background">
       <div className="max-w-7xl mx-auto py-8">
         {/* Contenedores de cartas */}
-        <div className="space-y-16">
+        <div className="space-y-16 px-5 md:px-4 lg:px-3 xl:px-0">
           {countryGroups.map((group, index) => (
             <CardContainer 
               key={index}
