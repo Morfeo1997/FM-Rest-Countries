@@ -1,12 +1,29 @@
-# React + Vite
+# Frontend mentor challenge - REST Countries API with color theme switcher
+- This is a solution for the frontendmentor Challenge REST "Countries API with color theme switcher"
+- This challenge consisted of integrating the API “data.json” that contains information and characteristics of different countries so that it works in real time and can display all kinds of information about the countries within the API.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Technologies
 
-Currently, two official plugins are available:
+- HTML 
+- CSS
+- JAVASCRIPT
+- REACT
+- TAILWINDCSS
+- Lucide Icons
+- VITE
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Screenshots
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Characteristics
+- Filter by Continent
+- Filter by Country Name
+- Change between Dark Mode / Light Mode
+- Country card view in 2x4 format (8 per load)
+- Progressive loading of more countries (8 more per click)
+- Detailed view when clicking on a country (with extended information)
+
+## Links
+- Frontendmentor (https://www.frontendmentor.io)
+- My portfolio (https://gaston-gomez1997.netlify.app/)
