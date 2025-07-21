@@ -14,6 +14,21 @@
 
 
 ## Screenshots
+  <div>
+      <p> Mobile - Dark</p>
+      <img src="./src/screenshots/Mobile-Dark-Rest-Api-Countries.jpg">
+      <p> Mobile - Light</p>
+      <img src="./src/screenshots/Mobile-Light-Rest-Api-Countries.jpg">
+  </div>
+
+  <div>
+      <p> Desktop - Dark</p>
+      <img src="./src/screenshots/Desktop-Dark-Rest-Api-Countries.jpg">
+      <p> Desktop - Light</p>
+      <img src="./src/screenshots/Desktop-Light-Rest-Api-Countries.jpg">
+  </div>
+
+  
 
 
 ## Characteristics
